@@ -7,18 +7,27 @@ import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class loginPage {
+	Playwright playwright;
+	Browser browser;
+	BrowserContext browsercontext;
+	Page page;
 	
-	Playwright playwright =Playwright.create();
-	Browser browser =playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(java.util.Arrays.asList("--start-maximized")));
+	@Before
+	 public void setup() {
+		  playwright =Playwright.create();
+		  browser =playwright.chromium().launch(new BrowserType.LaunchOptions().setChannel("chrome").setHeadless(false).setArgs(java.util.Arrays.asList("--start-maximized")));
+		  browsercontext =browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
+		  page=browsercontext.newPage();
+	 }
 	
-	BrowserContext browsercontext =browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
-	Page page=browsercontext.newPage();
 	
 	@Given("User navigate to website")
 	public void user_navigate_to_website() {
@@ -32,14 +41,15 @@ public class loginPage {
 	   System.out.println("Page title: "+ title);
 	}
 
-	@Then("user enters username")
-	public void user_enters_username() {
-	   page.locator("//input[@id=\"username\"]").fill("practice");
+	@Then("user enters {string} username")
+	public void user_enters_username(String username) {
+	   page.locator("//input[@id=\"username\"]").fill(username);
+	   
 	}
 
-	@And("user enters Password")
-	public void user_enters_password() {
-		 page.locator("//input[@id=\"password\"]").fill("SuperSecretPassword!");
+	@And("user enters {string} Password")
+	public void user_enters_password(String password) {
+		 page.locator("//input[@id=\"password\"]").fill(password);
 	}
 
 	@And("user clicks on the submit button")
@@ -47,5 +57,11 @@ public class loginPage {
 		   page.click("//button[@id=\"submit-login\"]");
 	}
 	
+	@After
+	public void teardown() {
+		page.close();
+		browsercontext.close();
+		playwright.close();
+	}
 	
 }

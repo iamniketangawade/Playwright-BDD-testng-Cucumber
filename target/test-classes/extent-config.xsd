@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="extentreports">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="configuration">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="theme" type="xs:string" />
+							<xs:element name="encoding" type="xs:string" />
+							<xs:element name="protocol" type="xs:string" />
+							<xs:element name="timelineEnabled" type="xs:string" />
+							<xs:element name="documentTitle" type="xs:string" />
+							<xs:element name="reportName" type="xs:string" />
+							<xs:element name="enableCategoryView" type="xs:string" />
+							<xs:element name="enableAuthorView" type="xs:string" />
+							<xs:element name="enableDeviceView" type="xs:string" />
+							<xs:element name="showTestName" type="xs:string" />
+							<xs:element name="showStatusOnHover" type="xs:string" />
+							<xs:element name="timestampFormat" type="xs:string" />
+							<xs:element name="timeStampFormat" type="xs:string" />
+							<xs:element name="chartLocation" type="xs:string" />
+							<xs:element name="chartVisibilityOnOpen" type="xs:string" />
+							<xs:element name="css" type="xs:string" />
+							<xs:element name="js" type="xs:string" />
+							<xs:element name="screenshotDir" type="xs:string" />
+							<xs:element name="screenshotRelPath" type="xs:string" />
+							<xs:element name="videoDir" type="xs:string" />
+							<xs:element name="videoRelPath" type="xs:string" />
+							<xs:element name="offlineMode" type="xs:string" />
+							<xs:element name="infoViewCharts" type="xs:string" />
+							<xs:element name="systemInfo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="system" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string" />
+													<xs:element name="value" type="xs:string" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

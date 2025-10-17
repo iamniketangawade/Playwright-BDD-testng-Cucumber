@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="extent-config.xsd">
+  <configuration>
+    
+    <!-- ========== REPORT STYLE ========== -->
+    <theme>dark</theme>
+    <encoding>UTF-8</encoding>
+    <protocol>https</protocol>
+    <timelineEnabled>true</timelineEnabled>
+
+    <!-- ========== REPORT TITLES ========== -->
+    <documentTitle>Playwright BDD Automation Report</documentTitle>
+    <reportName>Test Execution Summary -QA Automation</reportName>
+    
+    <!-- ========== CHART CONFIGURATION ========== -->
+    <enableCategoryView>true</enableCategoryView>
+    <enableAuthorView>true</enableAuthorView>
+    <enableDeviceView>true</enableDeviceView>
+    <showTestName>true</showTestName>
+    <showStatusOnHover>true</showStatusOnHover>
+
+    <!-- ========== TIMESTAMP & CHARTS ========== -->
+    <timestampFormat>dd-MM-yyyy HH:mm:ss</timestampFormat>
+    <timeStampFormat>dd-MMM-yyyy hh:mm:ss a</timeStampFormat>
+    <chartLocation>bottom</chartLocation>
+    <chartVisibilityOnOpen>true</chartVisibilityOnOpen>
+
+    <!-- ========== CUSTOM CSS ========== -->
+    <css>
+      body {
+        font-family: 'Segoe UI', sans-serif;
+      }
+      .test-name {
+        color: #00bcd4 !important;
+        font-weight: 600;
+      }
+      .step-status {
+        font-size: 14px;
+      }
+    </css>
+
+    <!-- ========== CUSTOM JAVASCRIPT ========== -->
+    <js>
+      document.title = 'Playwright Extent Report';
+      console.log('✅ Extent Report Loaded Successfully');
+    </js>
+
+    <!-- ========== SCREENSHOT SETTINGS ========== -->
+    <screenshotDir>target/ExtentReports/screenshots/</screenshotDir>
+    <screenshotRelPath>../screenshots/</screenshotRelPath>
+
+    <!-- ========== VIDEO SETTINGS ========== -->
+    <videoDir>target/ExtentReports/videos/</videoDir>
+    <videoRelPath>../videos/</videoRelPath>
+
+    <!-- ========== COMPANY FOOTER ========== -->
+    <offlineMode>true</offlineMode>
+    <infoViewCharts>true</infoViewCharts>
+    <systemInfo>
+      <system>
+        <name>Project</name>
+        <value>Playwright BDD Automation</value>
+      </system>
+      <system>
+        <name>Tester</name>
+        <value>Niketan Gawade</value>
+      </system>
+      <system>
+        <name>Tool</name>
+        <value>Playwright + Cucumber+ExtentReports</value>
+      </system>
+      <system>
+        <name>Browser</name>
+        <value>Chrome</value>
+      </system>
+    </systemInfo>
+
+  </configuration>
+</extentreports>

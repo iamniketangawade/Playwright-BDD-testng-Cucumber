@@ -5,20 +5,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title></title>
-<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
-<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
-<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
-<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
-<style type="text/css"></style></head><body class="spa bdd-report standard">
+<title>Playwright BDD Automation Report</title>
+<link rel="apple-touch-icon" href="spark/logo.png">
+<link rel="shortcut icon" href="spark/logo.png">
+<link rel="stylesheet" href="spark/spark-style.css">
+<link rel="stylesheet" href="spark/font-awesome.min.css">
+<script src="spark/jsontree.js"></script>
+<style type="text/css">
+body {
+font-family: 'Segoe UI', sans-serif;
+}
+.test-name {
+color: #00bcd4 !important;
+font-weight: 600;
+}
+.step-status {
+font-size: 14px;
+}
+</style></head><body class="spa bdd-report dark">
   <div class="app">
     <div class="layout">
 <div class="header navbar">
 <div class="vheader">
 <div class="nav-logo">
 <a href="#">
-<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+<div class="logo" style="background-image: url('spark/logo.png')"></div>
 </a>
 </div>
 <ul class="nav-left">
@@ -32,10 +43,10 @@
 </ul>
 <ul class="nav-right">
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary"></span></a>
+<a href="#"><span class="badge badge-primary">Test Execution Summary -QA Automation</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 17, 2025 05:16:21 pm</span></a>
+<a href="#"><span class="badge badge-primary">17-Oct-2025 06:15:21 pm</span></a>
 </li>
 </ul>
 </div>
@@ -81,7 +92,7 @@
           <div class="test-detail">
             <p class="name">Login Feature</p>
             <p class="text-sm">
-              <span>5:16:22 pm</span> / <span>00:00:09:729</span>
+              <span>6:15:22 pm</span> / <span>00:00:24:336</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -90,9 +101,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Login Feature</h5>
-<span class='badge badge-success'>10.17.2025 5:16:22 pm</span>
-<span class='badge badge-danger'>10.17.2025 5:16:32 pm</span>
-<span class='badge badge-default'>00:00:09:729</span>
+<span class='badge badge-success'>10.17.2025 6:15:22 pm</span>
+<span class='badge badge-danger'>10.17.2025 6:15:46 pm</span>
+<span class='badge badge-default'>00:00:24:336</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -106,37 +117,146 @@ I Have to enter correct username and Password</div>
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website with "valid" user</div>
       </div>
     </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="steps.loginPage.user_navigate_to_website()">
-                <span>Given User navigate to website</span>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website with "valid" user</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to website</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="steps.loginPage.user_validates_the_website_title()">
-                <span>When user validates the website title</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user validates the website title</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="steps.loginPage.user_enters_username()">
-                <span>Then user enters username</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "practice" username</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="steps.loginPage.user_enters_password()">
-                <span>And user enters Password</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user enters "SuperSecretPassword!" Password</span>
       <div>
       </div>
-              </div>
-              <div class="step pass-bg" title="steps.loginPage.user_clicks_on_the_submit_button()">
-                <span>And user clicks on the submit button</span>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on the submit button</span>
       <div>
       </div>
+                  </div>
               </div>
-          </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="11"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website with "valid" user</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to website</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user validates the website title</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "practice" username</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user enters "SuperSecretPassword" Password</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on the submit button</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website with "valid" user</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to website</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user validates the website title</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "practice1" username</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user enters "SuperSecretPassword" Password</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on the submit button</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Login to RoyalPage website with "valid" user</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given User navigate to website</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user validates the website title</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then user enters "practice1" username</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user enters "admin" Password</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user clicks on the submit button</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
         </div>
   </div>
 </div>
@@ -156,13 +276,13 @@ I Have to enter correct username and Password</div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 17, 2025 05:16:21 pm</h3>
+<h3>17-Oct-2025 06:15:21 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 17, 2025 05:16:32 pm</h3>
+<h3>17-Oct-2025 06:15:46 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -213,7 +333,7 @@ I Have to enter correct username and Password</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>4</b> scenarios passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -233,7 +353,7 @@ I Have to enter correct username and Password</div>
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>5</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>20</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -252,7 +372,7 @@ I Have to enter correct username and Password</div>
 </div></div>
 <script>
 var timeline = {
-"Login Feature":9.729
+"Login Feature":24.336
 };
 </script>
 <div class="row">
@@ -266,13 +386,13 @@ failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 1,
+passChild: 4,
 failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 5,
+passGrandChild: 20,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -283,6 +403,9 @@ eventsCount: 5,
       </div>
     </div>
   </div>
-<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
-<script type="text/javascript"></script></body>
+<script src="spark/spark-script.js"></script>
+<script type="text/javascript">
+      document.title = 'Playwright Extent Report';
+      console.log('✅ Extent Report Loaded Successfully');
+    </script></body>
 </html>
