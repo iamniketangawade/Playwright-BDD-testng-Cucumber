@@ -4,16 +4,13 @@ Feature: Login Feature
     I Have to enter correct username  and Password
 
   Scenario: Login to RoyalPage website with "valid" user
-    Given User navigate to website
+    Given User navigate to website "<URL>"
     When user validates the website title
     Then user enters "<usename>" username
     And user enters "<password>" Password
     And user clicks on the submit button
+    And user confirm the loginpage image
 
- Examples:
-	|usename|password|
-	|practice|SuperSecretPassword!|
-	|practice|SuperSecretPassword|
-	|practice1|SuperSecretPassword|
-	|practice1|admin|
-	
+    Examples:
+      | URL                                      | usename  | password             |
+      | https://practice.expandtesting.com/login | practice | SuperSecretPassword! |

@@ -1,5 +1,6 @@
 package steps;
 
+import org.apache.commons.math3.geometry.partitioning.BSPTreeVisitor.Order;
 
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
@@ -8,17 +9,20 @@ import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
 
 import io.cucumber.java.After;
+import io.cucumber.java.AfterAll;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeAll;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class loginPage {
-	Playwright playwright;
-	Browser browser;
-	BrowserContext browsercontext;
-	Page page;
+	public Playwright playwright;
+	public Browser browser;
+	public BrowserContext browsercontext;
+	public Page page;
 	
 	@Before
 	 public void setup() {
@@ -28,11 +32,26 @@ public class loginPage {
 		  page=browsercontext.newPage();
 	 }
 	
+	@Before(order =0)
+	public void message1(){
+		System.out.println("First execute");
+	}
+	@Before(order =1)
+	public void message2(){
+		System.out.println("S execute");
+	}
 	
-	@Given("User navigate to website")
-	public void user_navigate_to_website() {
+
+	@BeforeStep
+	public static void messagestp(){
+		System.out.println("Start step..........");
+	}
+	
+	
+	@Given("User navigate to website {string}")
+	public void user_navigate_to_website(String URL) {
 		
-		page.navigate("https://practice.expandtesting.com/login");
+		page.navigate(URL);
 	}
 
 	@When("user validates the website title")
@@ -56,6 +75,14 @@ public class loginPage {
 	public void user_clicks_on_the_submit_button() {
 		   page.click("//button[@id=\"submit-login\"]");
 	}
+	
+	@BeforeStep
+	public static void messagestp1(){
+		System.out.println("END step..........");
+	}
+	
+	
+	
 	
 	@After
 	public void teardown() {
